@@ -1,13 +1,11 @@
 const inquirer = require('inquirer');
-const Manager =  require('./lib/Manager')
-const Engineer = require('./lib/Engineer')
+const Manager =  require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 const fs = require('fs');
-const writeHtml = require('./src/team.js');
-
+const createTeam = require('./src/team.js');
 
 const employees = [];
-
-
 
 const managerQuestions = [
     {
@@ -78,8 +76,6 @@ const internQuestions = [
     },
 ]
 
-
-
 const menuQuestion = [
     
     {
@@ -88,13 +84,8 @@ const menuQuestion = [
         choices: ["Add Engineer", "Add Intern", "Finish List"],
         name: "menu"
     }
-
 ]
 
-
-
-
-function start(){
     function askManager(){
        inquirer.prompt(managerQuestions).then((res)=>{
         const manager = new Manager(res.managername, res.managerid, res.manageremail, res.officenum);
@@ -138,13 +129,9 @@ function start(){
     }
 
     function createHTML(){
-        fs.writeFileSync("index.html", writeHtml(employees), 'utf-8')
+        fs.writeFileSync("index.html", createTeam(employees), 'utf-8')
+
     }
 
 
-    askManager()
-}
-
-start()
-
-
+askManager()

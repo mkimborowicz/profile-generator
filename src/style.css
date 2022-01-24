@@ -1,0 +1,19 @@
+
+header {
+    text-align: center;
+    padding: 50px;
+    margin: 0px;
+    background: rgb(59, 122, 158);
+    color: white;
+    font-size: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.members {
+display: flex;
+padding: 20px;
+}
+
+.card {
+    margin: 10px;
+}
